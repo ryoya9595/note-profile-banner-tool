@@ -28,9 +28,10 @@ Always output the final usable image, not a guide image.
    - If the user says `おまかせ` for the count too, default to 1 image.
 3. If the user specifies a taste/style, use it. If not, choose tasteful variations automatically.
 4. Generate or use text-free background images:
-   - Use image generation for background, person, microphone, light, mood, and decorative elements.
+   - Choose background subjects that match the user's actual field and theme. Do NOT reuse motifs from the samples. In particular, do not add a microphone, headphones, or music gear unless the user's theme is clearly about voice / music / audio. For AI, marketing, consulting, business, etc., prefer subjects like a clean desk/workspace, abstract tech or data motifs, soft light, plants, or calm gradients.
+   - Use image generation for the background, optional person, light, mood, and decorative elements — but only ones that fit the user's theme.
    - Do not ask the image model to render Japanese text.
-   - Prompt the image model to leave open space on the left for text.
+   - Keep the LEFT side bright, clean, and open for text. Do not place dark, busy, or important subjects behind where the text panel will sit (panel spans roughly the left 55% of the banner). The text sits on a light panel, so a bright left area makes it readable.
 5. Run `scripts/compose_note_banner.py` to create final `1280x670` PNG files with text placed inside the center `1280x216` safe band.
 6. Verify every final image dimension before reporting completion.
 
@@ -69,14 +70,14 @@ If the user says `おまかせ`, `ランダム`, or `わからない`, proceed w
 Use this pattern when generating a background:
 
 ```text
-Create a premium text-free note.com creator page header background. Wide banner composition, aspect ratio 1.91:1. Do not include any text, letters, logo, or watermark.
+Create a premium, text-free note.com creator page header background. Wide banner composition, aspect ratio 1.91:1. Do not include any text, letters, logo, or watermark.
 
 Theme: {theme}
 Atmosphere: {mood}
-Right side: {subject or motif}, vertically centered in the middle horizontal safe band.
-Left side: large clean empty space for adding Japanese text later.
-Top and bottom margins should be mostly abstract background with no important subject.
-High-end, polished, usable commercial banner background.
+Right side: {subject or motif that fits the user's field}, vertically centered in the middle horizontal safe band. Pick a subject that matches the user's actual business or topic — do NOT reuse motifs from other examples (for instance, do not add a microphone unless the theme is about voice or music).
+Left side: keep this area bright, clean, and open, with plenty of soft, uncluttered space. A light panel with Japanese text will be placed here, so avoid any dark wash, busy detail, or important subject in the left area.
+Top and bottom margins: calm, abstract background with no important subject (they get cropped on note).
+Overall look: bright, airy, high-end, and polished. Avoid a heavy dark gradient over the left text area.
 ```
 
 ## Compose Command
