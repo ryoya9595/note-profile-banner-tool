@@ -11,6 +11,10 @@ CANVAS_W = 1280
 CANVAS_H = 670
 SAFE_Y = 227
 SAFE_H = 216
+PANEL_LEFT = 76
+PANEL_TOP = SAFE_Y + 34
+PANEL_RIGHT = 690
+PANEL_BOTTOM = SAFE_Y + 205
 
 
 FONT_CANDIDATES = [
@@ -87,7 +91,7 @@ def compose(args: argparse.Namespace) -> None:
     shadow = Image.new("RGBA", (CANVAS_W, CANVAS_H), (0, 0, 0, 0))
     shadow_draw = ImageDraw.Draw(shadow)
     shadow_draw.rounded_rectangle(
-        [76, SAFE_Y + 41, 690, SAFE_Y + SAFE_H - 25],
+        [PANEL_LEFT, PANEL_TOP + 7, PANEL_RIGHT, PANEL_BOTTOM + 4],
         radius=18,
         fill=(18, 34, 70, 25),
     )
@@ -96,7 +100,7 @@ def compose(args: argparse.Namespace) -> None:
     panel = Image.new("RGBA", (CANVAS_W, CANVAS_H), (0, 0, 0, 0))
     panel_draw = ImageDraw.Draw(panel)
     panel_draw.rounded_rectangle(
-        [76, SAFE_Y + 34, 690, SAFE_Y + SAFE_H - 34],
+        [PANEL_LEFT, PANEL_TOP, PANEL_RIGHT, PANEL_BOTTOM],
         radius=18,
         fill=(255, 255, 255, panel_opacity),
     )
@@ -113,7 +117,7 @@ def compose(args: argparse.Namespace) -> None:
     draw.text((x + 2, SAFE_Y + 84), args.title, font=title_font, fill=(255, 255, 255, 150))
     draw.text((x, SAFE_Y + 82), args.title, font=title_font, fill=colors["main"])
     draw.line([(x + 142, SAFE_Y + 155), (x + 450, SAFE_Y + 155)], fill=colors["line"], width=2)
-    draw.text((x, SAFE_Y + 174), args.tagline, font=tagline_font, fill=colors["body"])
+    draw.text((x, SAFE_Y + 169), args.tagline, font=tagline_font, fill=colors["body"])
 
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)

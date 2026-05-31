@@ -19,12 +19,13 @@ Always output the final usable image, not a guide image.
 
 ## Workflow
 
-1. If the user has not provided enough banner information, ask the hearing questions in the section below before generating.
-2. Determine the number of final images:
+1. As soon as this skill is triggered, start the conversation yourself. Do not wait for the user to describe the banner. First, greet them briefly and ask the hearing questions in the section below. Skip the hearing only if the user already gave full details, or said `おまかせ` / `ランダム` / `わからない`.
+2. Right after the hearing answers come back, confirm the number of images by asking `何枚作りますか？（1枚 / 複数枚 / 枚数指定）`. Then apply:
    - If the user says `1枚`, create 1 image.
    - If the user says `複数枚` without a count, create 3 images.
    - If the user specifies a count such as `2枚`, `4枚`, or `5枚`, create that many images.
    - Avoid creating 10 images unless the user explicitly asks for 10.
+   - If the user says `おまかせ` for the count too, default to 1 image.
 3. If the user specifies a taste/style, use it. If not, choose tasteful variations automatically.
 4. Generate or use text-free background images:
    - Use image generation for background, person, microphone, light, mood, and decorative elements.

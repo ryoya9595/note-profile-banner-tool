@@ -73,9 +73,9 @@ p {
 h1 {
   margin: 0;
   font-family: Georgia, "Hiragino Mincho ProN", serif;
-  font-size: clamp(42px, 7vw, 82px);
-  line-height: 1.02;
-  font-weight: 500;
+  font-size: clamp(32px, 5vw, 56px);
+  line-height: 1.18;
+  font-weight: 600;
 }
 
 h2 {

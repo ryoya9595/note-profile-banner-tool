@@ -1,4 +1,4 @@
 interface:
   display_name: "noteバナー生成"
   short_description: "noteヘッダーを1280×670px・中央216px安全設計で生成"
-  default_prompt: "noteプロフィール用バナーを1280×670px、中央216px安全帯に重要要素を収めて作って"
+  default_prompt: "noteプロフィール用バナーを作ります。まず私（ユーザー）にヒアリング質問をして、続けて何枚作るか確認してから、1280×670px・中央216px安全帯設計で完成PNGを作ってください。"
