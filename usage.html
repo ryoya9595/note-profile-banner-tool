@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <title>使い方ガイド｜noteバナー生成 Codexスキル</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main>
+      <section class="section">
+        <a class="textlink" href="./index.html">← トップに戻る</a>
+        <div class="section-heading" style="margin-top: 16px">
+          <p class="eyebrow">Usage Guide</p>
+          <h2>詳しい使い方ガイド</h2>
+          <p class="lead">
+            はじめての人でも迷わないように、Codexアプリの準備からバナー完成まで順番に説明します。
+            むずかしい操作はありません。
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Step 1</p>
+          <h2>Codexアプリを準備する</h2>
+          <p class="lead">まだCodexを入れていない人は、ここから。すでに使っている人は次へ進んでOK。</p>
+        </div>
+        <div class="cards">
+          <article>
+            <span>01</span>
+            <h3>アプリをダウンロード</h3>
+            <p>
+              公式ページからCodexアプリを入手します。MacとWindowsに対応。Macは自分のチップ
+              （Apple Silicon / Intel）に合うものを選びます。
+            </p>
+            <a class="textlink" href="https://chatgpt.com/ja-JP/codex/" target="_blank" rel="noopener noreferrer">公式ダウンロードページを開く →</a>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>サインイン</h3>
+            <p>
+              インストールしたら、お使いのChatGPTアカウントでサインインします。
+              Codexは ChatGPT Plus / Pro などの有料プランに含まれています。
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>起動を確認</h3>
+            <p>
+              アプリが立ち上がって、メッセージを打てる画面が出ればOK。これで準備完了です。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section split">
+        <div>
+          <p class="eyebrow">Step 2</p>
+          <h2>スキルを読み込ませる</h2>
+          <ol class="steps">
+            <li>
+              <strong>スキルをダウンロード</strong><br />
+              右のボタンから <code>note-banner-maker-skill.zip</code> を保存します。
+              解凍はしなくてOK。ZIPのままで大丈夫です。
+            </li>
+            <li>
+              <strong>CodexにZIPをアップロード</strong><br />
+              Codexの入力欄にある添付（クリップ）ボタンから、ダウンロードしたZIPファイルを
+              そのまま添付します。ドラッグ＆ドロップでも入ります。
+            </li>
+            <li>
+              <strong>下の指示文をコピーして送信</strong><br />
+              この文をそのまま貼り付けて送ると、Codexがスキルを正しい場所に置いて、
+              そのまま使えるように準備してくれます。
+            </li>
+          </ol>
+          <div class="prompt-box">
+            <textarea id="copyText" rows="5" readonly>添付した note-banner-maker-skill.zip を解凍して、中の note-banner-maker フォルダを ~/.codex/skills/ に置いてください。配置できたら、そのスキルを使って note のプロフィールバナーを作りたいです。まず私にヒアリングから始めてください。</textarea>
+            <button id="copyPrompt" class="button dark" type="button">指示文をコピー</button>
+          </div>
+        </div>
+        <div class="download-card">
+          <h3>ダウンロード</h3>
+          <p>スキル本体・文字合成スクリプト・仕様メモをまとめた ZIP です。</p>
+          <a class="button dark full" href="./downloads/note-banner-maker-skill.zip" download>note-banner-maker-skill.zip</a>
+          <p class="path-note">ダウンロードして、Codexにアップロードするだけ。</p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Step 3</p>
+          <h2>聞かれたことに答えるだけ</h2>
+          <p class="lead">
+            指示文を送ると、Codexの方から次のようなことを聞いてきます。
+            ぜんぶ答えなくても大丈夫。わかる範囲でOKで、迷ったら「おまかせで」と返せば進みます。
+          </p>
+        </div>
+        <div class="hearing-list">
+          <ol>
+            <li>アカウント名・肩書きは何ですか？</li>
+            <li>誰に向けたアカウントですか？</li>
+            <li>バナーに入れたい実績・強みはありますか？</li>
+            <li>読者に伝えたい一番の価値は何ですか？</li>
+            <li>好きな雰囲気や色味はありますか？</li>
+            <li>人物やモチーフは入れたいですか？</li>
+            <li>参考画像や、今のバナーがあれば添付してください。</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Tips</p>
+          <h2>何枚作るか伝える</h2>
+        </div>
+        <div class="cards">
+          <article>
+            <h3>1枚だけ</h3>
+            <p>「1枚で」と伝えると、1枚だけ作ります。</p>
+          </article>
+          <article>
+            <h3>複数パターン</h3>
+            <p>「複数枚で」と伝えると、3枚の案を作ります。雰囲気違いを見比べられます。</p>
+          </article>
+          <article>
+            <h3>枚数を指定</h3>
+            <p>「2枚で」「4枚で」のように数を言えば、その枚数を作ります。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Output</p>
+          <h2>できあがるもの</h2>
+          <p class="lead">
+            note公式の推奨サイズ <strong>1280×670px</strong> の完成PNGです。
+            重要な文字・顔・モチーフは、実際に表示される中央の帯（<strong>1280×216px</strong>）に
+            収まるように作るので、noteに設定したときに見切れません。ガイド線などは入らず、
+            そのままアップロードできる仕上がりです。
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Q&amp;A</p>
+          <h2>うまくいかないとき</h2>
+        </div>
+        <div class="cards">
+          <article>
+            <h3>スキルが見つからないと言われる</h3>
+            <p>
+              指示文をもう一度送るか、Codexを一度閉じて開き直してみてください。
+              再起動すると読み込み直されます。
+            </p>
+          </article>
+          <article>
+            <h3>文字が多くて入りきらない</h3>
+            <p>
+              バナーは横に細長く、入る文字数が少なめです。タイトルは短く、
+              キャッチコピーは1〜2行にすると、きれいに収まります。
+            </p>
+          </article>
+          <article>
+            <h3>イメージと違う</h3>
+            <p>
+              「もっと爽やかに」「青系で」など、ひとことフィードバックを返すだけで
+              作り直してくれます。気軽に伝えてください。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section cta">
+        <h2>準備ができたら、さっそく作ろう</h2>
+        <p class="lead">スキルをダウンロードして、Codexにアップロードするだけ。</p>
+        <div class="cta-actions">
+          <a class="button dark" href="./downloads/note-banner-maker-skill.zip" download>スキルをダウンロード</a>
+          <a class="button" href="./index.html">トップに戻る</a>
+        </div>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status" aria-live="polite">コピーしました</div>
+    <script src="./script.js"></script>
+  </body>
+</html>

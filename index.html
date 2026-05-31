@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'none'"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'none'"
     />
     <title>noteバナー生成 Codexスキル</title>
     <link rel="stylesheet" href="./styles.css" />
@@ -23,7 +23,7 @@
           </p>
           <div class="hero-actions">
             <a class="button dark" href="./downloads/note-banner-maker-skill.zip" download>スキルをダウンロード</a>
-            <a class="button" href="#start">使い方を見る</a>
+            <a class="button" href="./usage.html">使い方を見る</a>
           </div>
         </div>
         <figure class="hero-preview">
@@ -77,37 +77,28 @@
           <ol class="steps">
             <li>
               <strong>スキルをダウンロード</strong><br />
-              右のボタンから ZIP を保存し、解凍します。中に <code>note-banner-maker</code>
-              というフォルダが入っています。
+              右のボタンから <code>note-banner-maker-skill.zip</code> を保存します。解凍はしなくてOK。
             </li>
             <li>
-              <strong>Codexのスキル置き場に入れる</strong><br />
-              <code>note-banner-maker</code> フォルダを、下の場所にそのまま入れます。
-              <div class="path-box">
-                <p><b>Mac：</b>Finderで <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>G</kbd> を押して
-                <code>~/.codex/skills</code> を開き、その中へ。</p>
-                <p><b>Windows：</b>エクスプローラーで
-                <code>%USERPROFILE%\.codex\skills</code> を開き、その中へ。</p>
-                <p class="path-note">入れたあとの形 → <code>~/.codex/skills/note-banner-maker/SKILL.md</code></p>
-              </div>
+              <strong>CodexにZIPをアップロード</strong><br />
+              Codexを開いて、ダウンロードした ZIP ファイルをそのまま添付（アップロード）します。
             </li>
             <li>
-              <strong>Codexを再起動</strong><br />
-              一度Codexを閉じて開き直すと、スキルが読み込まれます。
-            </li>
-            <li>
-              <strong>起動するだけ</strong><br />
-              Codexでこのスキルを起動すると、Codexの方から「どんなバナーにしますか？」
-              「何枚作りますか？」と聞いてくれます。答えていくだけで完成PNGが出ます。
-              迷うところは「おまかせで」と言えばOKです。
+              <strong>下の指示文をコピーして送信</strong><br />
+              この文をそのまま貼り付けて送るだけ。あとはCodexがスキルをセットアップして、
+              「どんなバナーにする？」「何枚作る？」とヒアリングを始めてくれます。
             </li>
           </ol>
+          <div class="prompt-box">
+            <textarea id="copyText" rows="5" readonly>添付した note-banner-maker-skill.zip を解凍して、中の note-banner-maker フォルダを ~/.codex/skills/ に置いてください。配置できたら、そのスキルを使って note のプロフィールバナーを作りたいです。まず私にヒアリングから始めてください。</textarea>
+            <button id="copyPrompt" class="button dark" type="button">指示文をコピー</button>
+          </div>
         </div>
         <div class="download-card">
           <h3>ダウンロード</h3>
           <p>スキル本体・文字合成スクリプト・仕様メモをまとめた ZIP です。</p>
           <a class="button dark full" href="./downloads/note-banner-maker-skill.zip" download>note-banner-maker-skill.zip</a>
-          <p class="path-note">解凍 → フォルダごとスキル置き場へ。</p>
+          <p class="path-note">ダウンロードして、Codexにアップロードするだけ。</p>
         </div>
       </section>
 
@@ -130,12 +121,14 @@
 
       <section class="section cta">
         <h2>まずは試してみよう</h2>
-        <p class="lead">スキルをダウンロードして、Codexに入れるだけ。使い方は上の手順を見てね。</p>
+        <p class="lead">スキルをダウンロードして、CodexにアップロードするだけでOK。</p>
         <div class="cta-actions">
           <a class="button dark" href="./downloads/note-banner-maker-skill.zip" download>スキルをダウンロード</a>
-          <a class="button" href="#start">使い方を見る</a>
+          <a class="button" href="./usage.html">詳しい使い方を見る</a>
         </div>
       </section>
     </main>
+    <div id="toast" class="toast" role="status" aria-live="polite">コピーしました</div>
+    <script src="./script.js"></script>
   </body>
 </html>
