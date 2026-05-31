@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'none'"
+      content="default-src 'self'; script-src 'none'; style-src 'self'; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'none'"
     />
     <title>noteバナー生成 Codexスキル</title>
     <link rel="stylesheet" href="./styles.css" />
@@ -15,106 +15,115 @@
       <section class="hero">
         <div class="hero-copy">
           <p class="eyebrow">Codex Skill / note Header</p>
-          <h1>noteで見切れにくい<br />プロフィールバナーを作る</h1>
+          <h1>noteのバナーを<br />Codexに頼むだけで作る</h1>
           <p>
-            公式推奨サイズ <strong>1280×670px</strong> を前提に、実際に表示される中央帯
-            <strong>1280×216px</strong> を意識して完成PNGを作る、Codex用の簡易スキルです。
+            noteの推奨サイズ <strong>1280×670px</strong> に合わせて、文字が見切れない完成画像を
+            作るためのCodex用スキルです。Codexに入れて「バナー作って」と頼むだけ。
+            あとはCodexが必要なことを聞いて、そのままnoteに設定できるPNGを出してくれます。
           </p>
           <div class="hero-actions">
-            <a class="button dark" href="./downloads/note-banner-maker-skill.zip" download>スキルZIPをダウンロード</a>
-            <a class="button" href="./downloads/note-banner-maker-usage-guide.md" download>指示書をダウンロード</a>
+            <a class="button dark" href="./downloads/note-banner-maker-skill.zip" download>スキルをダウンロード</a>
+            <a class="button" href="#start">使い方を見る</a>
           </div>
         </div>
         <figure class="hero-preview">
           <img src="./sample-output/voice-training-sample.png" alt="noteバナー生成サンプル" />
+          <figcaption>スキルで作ったバナーの例</figcaption>
         </figure>
       </section>
 
       <section class="section">
         <div class="section-heading">
-          <p class="eyebrow">Why Codex</p>
-          <h2>ChatGPT画像生成のズレを、最後に整える</h2>
+          <p class="eyebrow">Step 0</p>
+          <h2>まずはCodexアプリを入れよう</h2>
+          <p class="lead">
+            「Codex（コーデックス）」は、あなたのパソコンの中で作業してくれるOpenAIのAIアプリです。
+            まだ入れていない人は、ここから始めてください。
+          </p>
         </div>
         <div class="cards">
           <article>
             <span>01</span>
-            <h3>画像生成は比率がズレることがある</h3>
-            <p>プロンプトでサイズ指定しても、1733×907pxのような近い比率で出ることがあります。</p>
+            <h3>アプリをダウンロード</h3>
+            <p>
+              公式ページからCodexアプリを入手します。MacとWindowsに対応。Macはお使いのチップ
+              （Apple Silicon / Intel）に合うものを選びます。
+            </p>
+            <a class="textlink" href="https://chatgpt.com/ja-JP/codex/" target="_blank" rel="noopener noreferrer">公式ダウンロードページを開く →</a>
           </article>
           <article>
             <span>02</span>
-            <h3>noteでは中央帯が重要</h3>
-            <p>1280×670px全体ではなく、中央1280×216pxに重要要素を収める設計が必要です。</p>
+            <h3>サインイン</h3>
+            <p>
+              インストールしたら、お使いのChatGPTアカウントでサインインします。
+              Codexは ChatGPT Plus / Pro などの有料プランに含まれています。
+            </p>
           </article>
           <article>
             <span>03</span>
-            <h3>Codexで完成PNGに整形</h3>
-            <p>背景生成後、Codexが文字を後乗せして1280×670pxの完成画像にします。</p>
+            <h3>起動を確認</h3>
+            <p>
+              アプリが立ち上がって、メッセージを打てる画面が出ればOK。
+              ここまで来たら、次のスキル導入に進みます。
+            </p>
           </article>
         </div>
       </section>
 
-      <section id="how-to" class="section split">
+      <section id="start" class="section split">
         <div>
-          <p class="eyebrow">Setup</p>
-          <h2>はじめての人向けの使い方</h2>
+          <p class="eyebrow">How to use</p>
+          <h2>スキルの入れ方と使い方</h2>
           <ol class="steps">
-            <li>このページからスキルZIPをダウンロードします。</li>
-            <li>ZIPを解凍して、出てきた `note-banner-maker` フォルダをCodexのスキルフォルダに入れます。</li>
-            <li>Codexを開き、下の依頼文をコピペします。</li>
-            <li>質問にわかる範囲で答えると、完成PNGが出力されます。</li>
+            <li>
+              <strong>スキルをダウンロード</strong><br />
+              右のボタンから ZIP を保存し、解凍します。中に <code>note-banner-maker</code>
+              というフォルダが入っています。
+            </li>
+            <li>
+              <strong>Codexのスキル置き場に入れる</strong><br />
+              <code>note-banner-maker</code> フォルダを、下の場所にそのまま入れます。
+              <div class="path-box">
+                <p><b>Mac：</b>Finderで <kbd>⌘</kbd>+<kbd>⇧</kbd>+<kbd>G</kbd> を押して
+                <code>~/.codex/skills</code> を開き、その中へ。</p>
+                <p><b>Windows：</b>エクスプローラーで
+                <code>%USERPROFILE%\.codex\skills</code> を開き、その中へ。</p>
+                <p class="path-note">入れたあとの形 → <code>~/.codex/skills/note-banner-maker/SKILL.md</code></p>
+              </div>
+            </li>
+            <li>
+              <strong>Codexを再起動</strong><br />
+              一度Codexを閉じて開き直すと、スキルが読み込まれます。
+            </li>
+            <li>
+              <strong>頼むだけ</strong><br />
+              Codexに「noteのプロフィールバナーを作って」と送ります。
+              足りない情報があればCodexの方から質問してくれるので、わかる範囲で答えればOK。
+              「おまかせで」と言えば全部おまかせでも作れます。
+            </li>
           </ol>
         </div>
         <div class="download-card">
           <h3>ダウンロード</h3>
-          <p>スキル本体、文字合成スクリプト、仕様メモをまとめています。</p>
+          <p>スキル本体・文字合成スクリプト・仕様メモをまとめた ZIP です。</p>
           <a class="button dark full" href="./downloads/note-banner-maker-skill.zip" download>note-banner-maker-skill.zip</a>
-          <a class="button full guide-link" href="./downloads/note-banner-maker-usage-guide.md" download>使い方の指示書</a>
+          <p class="path-note">解凍 → フォルダごとスキル置き場へ。</p>
         </div>
       </section>
 
       <section class="section">
         <div class="section-heading">
-          <p class="eyebrow">Copy Prompts</p>
-          <h2>Codexに貼る依頼文</h2>
+          <p class="eyebrow">Output</p>
+          <h2>こんなバナーができます</h2>
+          <p class="lead">
+            重要な文字や顔・モチーフは、noteで実際に表示される中央の帯にきちんと収まる設計。
+            設定したときに見切れません。
+          </p>
         </div>
-        <div class="prompt-grid">
-          <button data-prompt="おまかせで1枚作る" type="button">おまかせで1枚作る</button>
-          <button data-prompt="おまかせで複数枚作る。枚数は3枚でお願いします。" type="button">おまかせで複数枚作る</button>
-          <button data-prompt="テイスト指定で1枚作る。上品で清潔感のある白×淡いブルーのボイトレ系バナーにしてください。" type="button">テイスト指定で1枚作る</button>
-          <button data-prompt="テイスト指定で複数枚作る。枚数は3枚で、上品・爽やか・高級感の3パターンでお願いします。" type="button">テイスト指定で複数枚作る</button>
-        </div>
-        <div class="prompt-box">
-          <textarea id="copyText" rows="8" readonly>noteプロフィール用バナーを作ってください。
-
-枚数：1枚
-方針：おまかせ
-サイズ：1280×670px
-重要な文字や人物は中央1280×216pxに収めてください。</textarea>
-          <button id="copyPrompt" class="button dark" type="button">依頼文をコピー</button>
-        </div>
-      </section>
-
-      <section class="section split">
-        <div>
-          <p class="eyebrow">Hearing</p>
-          <h2>作る前にCodexが聞くこと</h2>
-          <p class="lead">全部答えなくても大丈夫。わかる範囲だけで作れるようにしています。</p>
-        </div>
-        <div class="hearing">
-          <ol>
-            <li>アカウント名・肩書きは何ですか？</li>
-            <li>誰に向けたアカウントですか？</li>
-            <li>バナーに入れたい実績・強みはありますか？</li>
-            <li>読者に伝えたい一番の価値は何ですか？</li>
-            <li>好きな雰囲気や色味はありますか？</li>
-            <li>人物やモチーフは入れたいですか？</li>
-            <li>参考画像や現在のバナーがあれば添付してください。</li>
-          </ol>
-        </div>
+        <figure class="output-preview">
+          <img src="./sample-output/voice-training-sample.png" alt="完成バナーのサンプル" />
+        </figure>
       </section>
     </main>
-    <div id="toast" class="toast" role="status" aria-live="polite">コピーしました</div>
-    <script src="./script.js"></script>
   </body>
 </html>
