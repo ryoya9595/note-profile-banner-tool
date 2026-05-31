@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <title>note Banner Studio</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workbench" aria-label="noteプロフィールバナー作成ツール">
+        <aside class="panel controls">
+          <div class="brand">
+            <span class="mark">nb</span>
+            <div>
+              <p class="eyebrow">note Banner Studio</p>
+              <h1>見切れにくいプロフィールバナー設計</h1>
+            </div>
+          </div>
+
+          <div class="field-grid">
+            <label>
+              <span>アカウント名</span>
+              <input id="accountName" value="AI集客ラボ" />
+            </label>
+            <label>
+              <span>肩書き</span>
+              <input id="titleText" value="AI活用とWeb集客の実践サポート" />
+            </label>
+            <label>
+              <span>ターゲット</span>
+              <input id="targetText" value="個人事業主・ひとり社長" />
+            </label>
+            <label>
+              <span>強み・実績</span>
+              <input id="proofText" value="AI導入 / SNS設計 / 業務効率化" />
+            </label>
+            <label class="wide">
+              <span>一番伝えたい価値</span>
+              <textarea id="valueText" rows="3">AIで売上につながる発信をラクにする</textarea>
+            </label>
+            <label>
+              <span>人物・モチーフ</span>
+              <input id="motifText" value="PC、光のライン、未来感" />
+            </label>
+            <label>
+              <span>雰囲気</span>
+              <select id="mood">
+                <option value="editorial">洗練・信頼感</option>
+                <option value="luxury">高級感・余白</option>
+                <option value="pop">明るい・親しみ</option>
+                <option value="cyber">近未来・AI感</option>
+              </select>
+            </label>
+            <label>
+              <span>配色</span>
+              <select id="palette">
+                <option value="blueprint">黒白 × ブルー</option>
+                <option value="ink">墨黒 × 生成り × 赤</option>
+                <option value="forest">深緑 × 白 × ライム</option>
+                <option value="sunset">チャコール × コーラル</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="actions">
+            <button id="randomize" class="ghost" type="button">ランダム案</button>
+            <button id="copyPrompt" type="button">プロンプトコピー</button>
+            <button id="downloadSvg" class="dark" type="button">SVG保存</button>
+          </div>
+        </aside>
+
+        <section class="canvas-area">
+          <div class="topbar">
+            <div>
+              <p class="eyebrow">1280 × 670 / 1.91:1</p>
+              <h2>Live Preview</h2>
+            </div>
+            <div class="view-toggle" role="group" aria-label="表示モード">
+              <button class="active" data-view="full" type="button">全体</button>
+              <button data-view="crop" type="button">表示域</button>
+            </div>
+          </div>
+
+          <div class="stage-wrap">
+            <div id="bannerStage" class="banner-stage" role="img" aria-label="バナープレビュー">
+              <div class="texture"></div>
+              <div class="safe-band"></div>
+              <div class="crop-lines" aria-hidden="true">
+                <span></span>
+                <span></span>
+              </div>
+              <div class="orbital one"></div>
+              <div class="orbital two"></div>
+              <div class="banner-copy">
+                <p id="previewTarget" class="target">個人事業主・ひとり社長へ</p>
+                <h3 id="previewName">AI集客ラボ</h3>
+                <p id="previewTitle">AI活用とWeb集客の実践サポート</p>
+                <strong id="previewValue">AIで売上につながる発信をラクにする</strong>
+                <small id="previewProof">AI導入 / SNS設計 / 業務効率化</small>
+              </div>
+              <div class="motif-card">
+                <span></span>
+                <p id="previewMotif">PC、光のライン、未来感</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="output-grid">
+            <article class="mini-card">
+              <span>安全領域</span>
+              <strong>中央寄せ</strong>
+              <p>重要文字は中央の表示域内に固定</p>
+            </article>
+            <article class="mini-card">
+              <span>公式目安</span>
+              <strong>1280×670</strong>
+              <p>高画質なら1920×1006も候補</p>
+            </article>
+            <article class="mini-card prompt-card">
+              <span>生成プロンプト</span>
+              <textarea id="promptOutput" rows="7" readonly></textarea>
+            </article>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" role="status" aria-live="polite">コピーしました</div>
+    <script src="./script.js"></script>
+  </body>
+</html>
