@@ -41,8 +41,7 @@ main {
 .hero-copy,
 .section,
 .hero-preview,
-.download-card,
-.output-preview {
+.download-card {
   border: 1px solid var(--line);
   border-radius: 8px;
   background: rgba(255, 253, 248, 0.86);
@@ -73,8 +72,8 @@ p {
 h1 {
   margin: 0;
   font-family: Georgia, "Hiragino Mincho ProN", serif;
-  font-size: clamp(32px, 5vw, 56px);
-  line-height: 1.18;
+  font-size: clamp(25px, 4vw, 44px);
+  line-height: 1.32;
   font-weight: 600;
 }
 
@@ -139,8 +138,7 @@ button.dark {
   padding: 14px;
 }
 
-.hero-preview img,
-.output-preview img {
+.hero-preview img {
   display: block;
   width: 100%;
   border-radius: 6px;
@@ -153,9 +151,52 @@ button.dark {
   color: var(--muted);
 }
 
-.output-preview {
-  margin: 18px 0 0;
-  padding: 14px;
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.gallery-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1280 / 670;
+  border: 1px dashed rgba(21, 21, 21, 0.28);
+  border-radius: 8px;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(21, 21, 21, 0.018) 0 10px,
+      transparent 10px 20px
+    ),
+    rgba(255, 255, 255, 0.5);
+  color: var(--muted);
+  font-weight: 900;
+  letter-spacing: 0.04em;
+}
+
+.gallery-item:nth-child(5) {
+  grid-column: 1 / -1;
+  aspect-ratio: auto;
+  min-height: 140px;
+}
+
+.cta {
+  text-align: center;
+}
+
+.cta .lead {
+  margin: 12px auto 0;
+  max-width: 520px;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
 }
 
 .section {
@@ -288,7 +329,8 @@ kbd {
     min-height: auto;
   }
 
-  .cards {
+  .cards,
+  .gallery {
     grid-template-columns: 1fr;
   }
 }
