@@ -19,7 +19,7 @@ Always output the final usable image, not a guide image.
 
 ## Workflow
 
-1. As soon as this skill is triggered, start the conversation yourself. Do not wait for the user to describe the banner. First, greet them briefly and ask the hearing questions in the section below. Skip the hearing only if the user already gave full details, or said `おまかせ` / `ランダム` / `わからない`.
+1. As soon as this skill is triggered, start the conversation yourself. Do not wait for the user to describe the banner. First, greet them briefly. If the user has just set up or installed the skill (for example, they uploaded the zip and asked you to place it into `~/.codex/skills/`), also tell them once: from now on they can call this skill anytime by typing `/note-banner-maker` in chat — they do not need to send the setup message again. Then ask the hearing questions in the section below. Skip the hearing only if the user already gave full details, or said `おまかせ` / `ランダム` / `わからない`.
 2. Right after the hearing answers come back, confirm the number of images by asking `何枚作りますか？（1枚 / 複数枚 / 枚数指定）`. Then apply:
    - If the user says `1枚`, create 1 image.
    - If the user says `複数枚` without a count, create 3 images.
