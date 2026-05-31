@@ -176,12 +176,6 @@ button.dark {
   letter-spacing: 0.04em;
 }
 
-.gallery-item:nth-child(5) {
-  grid-column: 1 / -1;
-  aspect-ratio: auto;
-  min-height: 140px;
-}
-
 .cta {
   text-align: center;
 }
