@@ -77,10 +77,6 @@ h1 {
   font-weight: 600;
 }
 
-h1 .nw {
-  display: inline-block;
-}
-
 h2 {
   margin: 0;
   font-size: clamp(27px, 3.5vw, 44px);
